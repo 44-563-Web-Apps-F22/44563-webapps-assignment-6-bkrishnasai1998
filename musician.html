@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Apps Assignment 6</title>
+</head>
+ 
+<body>
+
+<h2>Musician guess by Krishna Sai</h2>
+
+<form>
+    <label for="musician_name">Enter the secret musician name </label>
+    <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
+
+    <label for="musician_text">Guess the musician</label>
+    <input type ="text" id="musician_text" name="musician_text"> <br>
+
+    <input type="button" onclick=" checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let correct=0;
+let wrong=0;
+function  checkGuess(){
+
+    pwd=document.getElementById("musician_name").value
+    guess=document.getElementById("musician_text").value
+
+    output=document.getElementById("result")
+    if(pwd==guess){
+        correct=correct+1
+        alert("You got it right")
+    }
+    else{
+        wrong=wrong+1
+        alert("Wrong Musician")
+    }
+
+    output.innerHTML="Correct count "+correct+". Wrong count "+wrong
+}
+</script>
+
+</body>
+</html> 
