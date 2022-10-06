@@ -46,22 +46,34 @@
 
         let correct=0;
         let wrong=0;
+        count=0;
         function  checkGuess(){
 
             pwd=document.getElementById("musician_name").value
             guess=document.getElementById("musician_text").value
-
             output=document.getElementById("result")
             if(pwd==guess){
+                count=0;
                 correct=correct+1
                 alert("You got it right")
             }
             else{
+                count=count+1;
                 wrong=wrong+1
                 alert("Wrong Musician")
             }
+            if(count>=3){
+                if(wrong>=3){
+                    displayAlert();
+                }
+            }
 
-            output.innerHTML="Correct count "+correct+". Wrong count "+wrong
+            output.innerHTML="Correct count "+correct+". Wrong count "+wrong;
+        
+       function displayAlert(){
+        alert("Sorry, game over.");
+       }     
+        
         }
 
         let useImage=1;
