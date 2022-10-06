@@ -20,12 +20,16 @@
     <h2>Musician guess by Krishna Sai</h2>
 
     <form>
+        <div class="col-auto">
         <label for="musician_name">Enter the secret musician name </label>
-        <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
-
+        <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> 
+        </div>
+        <br>
+        <div class="col-auto">
         <label for="musician_text">Guess the musician</label>
         <input type ="text" id="musician_text" name="musician_text"> <br>
-
+        </div>
+        <br>
         <input type="button" onclick=" checkGuess()" value="Check the guess">
         <div id="display"></div>
 
