@@ -6,43 +6,73 @@
  
 <body>
 
-<h2>Musician guess by Krishna Sai</h2>
+    <h2>Musician guess by Krishna Sai</h2>
 
-<form>
-    <label for="musician_name">Enter the secret musician name </label>
-    <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
+    <form>
+        <label for="musician_name">Enter the secret musician name </label>
+        <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
 
-    <label for="musician_text">Guess the musician</label>
-    <input type ="text" id="musician_text" name="musician_text"> <br>
+        <label for="musician_text">Guess the musician</label>
+        <input type ="text" id="musician_text" name="musician_text"> <br>
 
-    <input type="button" onclick=" checkGuess()" value="Check the guess">
-</form>
+        <input type="button" onclick=" checkGuess()" value="Check the guess">
+        <div id="display"></div>
 
+        <div id="container">
+            <img src="alderflies.jpg" id="image" alt="Alderflies" height="100px" width="100px" onclick="swapImage()">
+        </div>
+    </form>
 
-<p id="result">This text will be replaced </p>
+    <p id="result">This text will be replaced</p>
+    
 
-<script> 
+    <script> 
 
-let correct=0;
-let wrong=0;
-function  checkGuess(){
+        let correct=0;
+        let wrong=0;
+        function  checkGuess(){
 
-    pwd=document.getElementById("musician_name").value
-    guess=document.getElementById("musician_text").value
+            pwd=document.getElementById("musician_name").value
+            guess=document.getElementById("musician_text").value
 
-    output=document.getElementById("result")
-    if(pwd==guess){
-        correct=correct+1
-        alert("You got it right")
-    }
-    else{
-        wrong=wrong+1
-        alert("Wrong Musician")
-    }
+            output=document.getElementById("result")
+            if(pwd==guess){
+                correct=correct+1
+                alert("You got it right")
+            }
+            else{
+                wrong=wrong+1
+                alert("Wrong Musician")
+            }
 
-    output.innerHTML="Correct count "+correct+". Wrong count "+wrong
-}
-</script>
+            output.innerHTML="Correct count "+correct+". Wrong count "+wrong
+        }
+
+        let useImage=1;
+        function swapImage(){
+            image = document.getElementById("image")
+                switch (useImage) {
+                    case 1:
+                        image.src = "alderflies.jpg";
+                        useImage = useImage + 1;
+                        break;
+                    case 2:
+                        image.src = "bug1.jpg";
+                        useImage = useImage + 1;
+                        break;
+                    case 3:
+                        image.src = "lice.jpg";
+                        useImage = useImage + 1;
+                        break;
+                    default:
+                        break;
+                }
+        }
+
+    </script>
+
+    
+
 
 </body>
 </html> 
